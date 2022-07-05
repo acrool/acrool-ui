@@ -1,7 +1,7 @@
 {
   "name": "bearests-ui",
   "description": "Bearests UI is a collection of React UI libraries for shipping new features faster. Start with our production-ready components.",
-  "version": "0.0.1",
+  "version": "0.0.2-alpha.0",
   "private": false,
   "author": "imagine10255@gmail.com",
   "license": "MIT",
