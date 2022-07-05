@@ -1,0 +1,69 @@
+{
+  "name": "bearests-ui",
+  "description": "Bearests UI is a collection of React UI libraries for shipping new features faster. Start with our production-ready components.",
+  "version": "0.0.1",
+  "private": false,
+  "author": "imagine10255@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bearests/bearests-ui"
+  },
+  "engines": {
+    "npm": ">=6",
+    "node": ">=14.5.0"
+  },
+  "scripts": {
+    "gitlog": "git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %an %Cgreen(%cr)%Creset'",
+    "cz": "git cz",
+    "release:major": "standard-version -r major",
+    "release:minor": "standard-version -r minor",
+    "release:patch": "standard-version -r patch",
+    "release:alpha": "standard-version --prerelease alpha"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "3.3.0",
+    "cz-customizable": "6.6.0",
+    "standard-version": "9.5.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "quotes": [
+        "warn",
+        "single"
+      ],
+      "semi": [
+        "warn",
+        "always"
+      ],
+      "indent": [
+        "warn",
+        4
+      ],
+      "object-curly-spacing": [
+        "warn",
+        "never"
+      ],
+      "no-useless-escape": "off",
+      "import/no-anonymous-default-export": "off",
+      "react-hooks/exhaustive-deps": "off",
+      "@typescript-eslint/no-unused-vars": "off"
+    }
+  }
+}
