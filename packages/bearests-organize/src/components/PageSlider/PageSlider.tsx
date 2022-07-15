@@ -6,12 +6,13 @@ import {isNotEmpty, deepCompare} from 'bear-jsutils/equal';
 // Components
 import {Icon} from '@bearests/atom';
 
-import {IItem} from './types';
+import {IFunctionItem, IItem} from './types';
 
 interface IMessageItem {
     isAuth: boolean,
     isNotice: boolean,
 }
+
 
 interface IProps {
     logoUrl: string,
@@ -26,6 +27,7 @@ interface IProps {
         onVisible?: (isVisible: boolean) => void,
         isHold?: boolean,
     }
+    functionMenu: IFunctionItem[]
     menuItem: {
         feature: IItem[],
         admin: IItem[],
@@ -52,6 +54,7 @@ const PageSlider = ({
     onNavigateMenu = () => {},
 
     panel,
+    functionMenu,
     menuItem,
     messageItem,
 }: IProps) => {
@@ -267,36 +270,17 @@ const PageSlider = ({
                         <Icon code="align-center" size={24}/>
                     </FeatureIconButton>
 
-                    <FeatureIconButton type="button" onClick={onSearch}>
-                        <Icon code="search" size={24}/>
-                    </FeatureIconButton>
-
-                    {messageItem.system.isAuth && (
-                        <FeatureIconButton
+                    {functionMenu.map(row => {
+                        return <FeatureIconButton
                             type="button"
-                            onClick={(event) => handleClickFeature(event,'/admin/notice')}
-                            isActive={activePath.includes('/admin/notice')}
-                            isNotice={messageItem.system.isNotice}
+                            onClick={row.onClick}
+                            isActive={row.isActive}
+                            isNotice={row.isNotice}
+                            noticeColor={row.noticeColor ?? '#007bff'}
                         >
-                            <Icon code="bell-alt" size={24}/>
+                            <Icon code={row.icon.code} size={24}/>
                         </FeatureIconButton>
-                    )}
-
-                    {messageItem.member.isAuth && (
-                        <FeatureIconButton
-                            type="button"
-                            onClick={(event) => handleClickFeature(event,'/message')}
-                            isActive={activePath.includes('/message')}
-                            isNotice={messageItem.member.isNotice}
-                            noticeColor="#007bff"
-                        >
-                            <Icon code="comment-alt-lines" size={24}/>
-                        </FeatureIconButton>
-                    )}
-
-                    <FeatureIconButton type="button" disabled>
-                        <Icon code="share-alt" size={24}/>
-                    </FeatureIconButton>
+                    })}
 
                 </MainFeatureGroup>
 

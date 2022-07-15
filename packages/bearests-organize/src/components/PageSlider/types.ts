@@ -10,3 +10,12 @@ export interface IItem {
     after: {type: AfterType, prefix?: string, code?: string, color?: string},
     children?: IItem[]
 }
+
+export interface IFunctionItem {
+    text: string,
+    icon: {code: string, color: string},
+    onClick: () => void,
+    isActive: boolean,
+    isNotice: boolean,
+    noticeColor?: string,
+}
