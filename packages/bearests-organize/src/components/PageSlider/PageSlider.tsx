@@ -278,7 +278,7 @@ const PageSlider = ({
                             isNotice={row.isNotice}
                             noticeColor={row.noticeColor ?? '#007bff'}
                         >
-                            <Icon code={row.icon.code} size={24}/>
+                            <Icon code={row.icon.code} size={24} color={row.icon.color ?? '#bdbdbd'}/>
                         </FeatureIconButton>
                     })}
 
