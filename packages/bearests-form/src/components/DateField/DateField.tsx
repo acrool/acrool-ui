@@ -10,6 +10,8 @@ import {Datepicker} from 'bear-react-datepicker';
 import {Icon} from '@bearests/atom';
 import TextField from '../TextField';
 
+import 'bear-react-datepicker/dist/index.css';
+
 interface IProps extends FCProps{
     placeholder?: string;
     value?: string;
