@@ -9,6 +9,7 @@ export {default as SecurityCode} from './components/SecurityCode';
 
 export {default as Select} from './components/Select';
 export * as SelectType from './components/Select/types';
+export {default as Select2} from './components/Select2';
 
 export {default as SwitchControl} from './components/SwitchControl';
 export {default as TagField} from './components/TagField';
