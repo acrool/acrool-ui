@@ -1,9 +1,9 @@
 import React from 'react';
-import IconSvg, {IIconSvgProps} from 'bearests-backdesk-comp';
+import IconSvg, {IIconSvgProps} from 'bear-react-iconsvg';
 import styled from 'styled-components';
 
 
-const idPrefix = 'icon';
+const idPrefix = 'icon_';
 const path = 'static/plugins/iconsvg/index.svg';
 
 
@@ -15,7 +15,7 @@ interface IProps extends IIconSvgProps {
  * IconSvg
  * https://github.com/imagine10255/bearests-backdesk-comp
  */
-const Icon = (props: IProps) => {
+const MyIcon = (props: IProps) => {
     return <ThemeIconSvg
         {...props}
         idPrefix={idPrefix}
@@ -23,7 +23,8 @@ const Icon = (props: IProps) => {
     />;
 };
 
-export default Icon;
+export default MyIcon;
+
 
 const ThemeIconSvg = styled(IconSvg)`
   --primary-color: #00a3e0;

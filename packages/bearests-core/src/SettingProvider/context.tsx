@@ -20,6 +20,7 @@ export interface IParams {
 const params: IParams = {
     iconSvg: {
         symbolsPath: '/static/plugins/iconsvg/index.svg',
+        idPrefix: 'icon_'
     },
     loadingImage: '/static/images/loading.gif',
 };

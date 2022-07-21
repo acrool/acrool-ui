@@ -2,9 +2,8 @@ import React, {useState, useCallback, memo} from 'react';
 import styled, {css, keyframes} from 'styled-components/macro';
 import {media} from 'bear-react-grid';
 import {isNotEmpty, deepCompare} from 'bear-jsutils/equal';
-
-// Components
 import {Icon} from '@bearests/atom';
+
 
 import {IFunctionItem, IItem} from './types';
 
@@ -154,7 +153,7 @@ const PageSlider = ({
                         <MainMenuLink onClick={(event: any) => handleControlPanel(0, row.path, row?.children?.length, event.metaKey || event.ctrlKey)}>
                             <IconThumbnail>
                                 {(row.after.type === 'icon' && row.after.code)?
-                                    <MenuIcon code={row.after.code} color={row.after.color}/>
+                                    <Icon code={row.after.code} color={row.after.color}/>
                                     :
                                     row.after.code
                                 }
@@ -167,7 +166,7 @@ const PageSlider = ({
 
                             {typeof row.children !== 'undefined' &&
                             <ArrowIcon>
-                                <Icon code="angle-left"/>
+                                <Icon code="angle_left"/>
                             </ArrowIcon>
                             }
                         </MainMenuLink>
@@ -198,7 +197,7 @@ const PageSlider = ({
                                                 {
                                                     typeof subRow.children !== 'undefined' &&
                                                     <ArrowIcon>
-                                                        <Icon code="angle-left"/>
+                                                        <Icon code="angle_left"/>
                                                     </ArrowIcon>
                                                 }
                                             </SubMenuLink>
@@ -231,7 +230,7 @@ const PageSlider = ({
                                                                     {
                                                                         typeof thirdRow.children !== 'undefined' &&
                                                                         <ArrowIcon>
-                                                                            <Icon code="angle-left"/>
+                                                                            <Icon code="angle_left"/>
                                                                         </ArrowIcon>
                                                                     }
                                                                 </SubMenuLink>
@@ -267,7 +266,7 @@ const PageSlider = ({
 
                 <MainFeatureGroup>
                     <FeatureIconButton type="button" onClick={() => panel?.onVisible ? panel.onVisible(!panel.isVisible): undefined}>
-                        <Icon code="align-center" size={24}/>
+                        <Icon code="align_center" size={24}/>
                     </FeatureIconButton>
 
                     {functionMenu.map(row => {
@@ -287,7 +286,7 @@ const PageSlider = ({
                 <FooterFeatureGroup>
 
                     <FeatureIconButton type="button" disabled>
-                        <Icon code="sliders-v" size={24}/>
+                        <Icon code="sliders_v" size={24}/>
                     </FeatureIconButton>
 
                     <FeatureIconButton type="button" disabled>
@@ -295,7 +294,7 @@ const PageSlider = ({
                     </FeatureIconButton>
 
                     <FeatureIconButton type="button" onClick={onLogout}>
-                        <Icon code="power-off" size={24}/>
+                        <Icon code="power_off" size={24}/>
                     </FeatureIconButton>
 
 
@@ -311,12 +310,12 @@ const PageSlider = ({
                     </SiteName>
 
                     <AppIconButton className="d-none d-lg-block" type="button">
-                        <Icon code="th-large" color="#626669" size={24}/>
+                        <Icon code="th_large" color="#626669" size={24}/>
                     </AppIconButton>
                     <AppIconButton
                         className="d-lg-none"
                         type="button" onClick={() => panel?.onVisible ? panel.onVisible(false): undefined}>
-                        <Icon code="angle-left" color="#626669" size={24}/>
+                        <Icon code="angle_left" color="#626669" size={24}/>
                     </AppIconButton>
                     {/*<Logo src={asset('/images/logo_white_2x.png')} width={78} height={22}/>*/}
                 </SidebarHeader>
@@ -957,7 +956,7 @@ const PageSliderSubRoot = styled.div<{
 
     padding-top: 20px;
     //background-color: #f5f5f5;
-    z-index: auto;
+    //z-index: auto;
     //z-index: 1000;
     left: 0;
     position: fixed;

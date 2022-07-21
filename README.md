@@ -23,12 +23,12 @@ yarn add @bearests/core @bearests/atom @bearests/form @bearests/organize
 ## Usage
 
 ```tsx
-import {Icon} from '@bearests/atom';
+import {MyIcon} from '@bearests/atom';
 
-<Icon code="apple" color="#000" size={30}/>
-<Icon code="android" color="green" size={30}/>
-<Icon code="arrow-alt-right" color="primary" size={30}/>
-<Icon code="arrow-right" color="secondary" size={30}/>
+<MyIcon code="apple" color="#000" size={30}/>
+<MyIcon code="android" color="green" size={30}/>
+<MyIcon code="arrow-alt-right" color="primary" size={30}/>
+<MyIcon code="arrow-right" color="secondary" size={30}/>
 ```
 
 

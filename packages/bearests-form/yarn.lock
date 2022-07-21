@@ -1089,10 +1089,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bearests/atom@0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@bearests/atom/-/atom-0.0.1.tgz#ecd54da721029ff8495251bf4fdd8ba0266591b5"
-  integrity sha512-HcsahePqr/XcNoBmXWlU2oqdHopCwa6qCkf1N9PfqVero+Wnkc01PTI81+d9bHCJ0C/LRZuf6TgjsLHPU+9OZQ==
+"@bearests/atom@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@bearests/atom/-/atom-0.0.3.tgz#b81d1e604eb53368d911a85c1975dcefe9e06f0b"
+  integrity sha512-zYRcUWIiczGD70zkUFW3BtfkA8qWASfAkz9BWQIheFn/s2sEABNkFctjtUA/VpP/CNdzBkNJG/bxpkQzgvb7aA==
   dependencies:
     styled-components "5.3.5"
 
@@ -3057,10 +3057,10 @@ bear-react-grid@^2.0.1:
   dependencies:
     styled-components "5.3.5"
 
-bear-react-iconsvg@^2.0.3-alpha.0:
-  version "2.0.3-alpha.0"
-  resolved "https://registry.yarnpkg.com/bear-react-iconsvg/-/bear-react-iconsvg-2.0.3-alpha.0.tgz#588da92f9d8fc4b6bee9e662bd6ac4e5c8cc60c6"
-  integrity sha512-Z6IujhbLdVZwmbp87nYWUtE4k2ODXTyoGAdSzfwAYJXLFetnGNI3f4jVWF2lIAWrRZSiRKsFYUpk3X6cqsX54g==
+bear-react-iconsvg@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/bear-react-iconsvg/-/bear-react-iconsvg-2.0.3.tgz#b8477413ebfbd4c4dbd597ceacfcb075b856729e"
+  integrity sha512-AZAjQl+az3duOB6HjeouESY5z/FTYBuCP+1xYS0+ti2cVsP249HAGr5gVuARQH4g2ax+77vbBZduo/rR3iqT0Q==
   dependencies:
     styled-components "5.3.5"
 
