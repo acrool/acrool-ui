@@ -1,6 +1,6 @@
 {
   "name": "@bearests/form",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Bearests UI is a collection of React UI libraries for shipping new features faster. Start with our production-ready components.",
   "keywords": [
     "react",
@@ -72,7 +72,7 @@
     "bear-react-grid": "^2.0.1",
     "bear-jsutils": "^1.0.13",
     "bear-react-iconsvg": "^2.0.3",
-    "bear-react-datepicker": "2.0.3",
+    "bear-react-datepicker": "2.0.4",
     "@bearests/atom": "0.0.3"
   },
   "eslintConfig": {

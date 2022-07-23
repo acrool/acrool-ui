@@ -128,6 +128,7 @@ const DateField: React.FC<IProps> = ({
                             value={value}
                             onChange={handleOnChange}
                             isVisibleSetToday={isVisibleSetToday}
+                            isDark
                         />
                     </DatePickerContainer>
                     <CloseArea isVisible={isDatePickerVisible} onClick={() => handleDatePickerVisible(false)}/>

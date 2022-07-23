@@ -3045,10 +3045,10 @@ bear-jsutils@^1.0.13:
   resolved "https://registry.yarnpkg.com/bear-jsutils/-/bear-jsutils-1.0.13.tgz#5db52682a729039b98d45bb6b1c0cd908a68776b"
   integrity sha512-htuq+OkrZhGbpZDwSP2jWlv9JfE/6Ky5lXwa0OrxwBweZEmQD0q5q5IADi1ewBv0A7N/VMnvb7YNNjuaD2Lpyw==
 
-bear-react-datepicker@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/bear-react-datepicker/-/bear-react-datepicker-2.0.3.tgz#6df30fc3912c3603bc81839b5f50b6798c650779"
-  integrity sha512-RV2t/3+n9vltdDyUjaVdqkYB0qo8tkhbgB95L8UucpZTTRQFluhF8J7qCy9f7NB3JoTSTSVXmdF+kgtFbHbFvg==
+bear-react-datepicker@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/bear-react-datepicker/-/bear-react-datepicker-2.0.4.tgz#3713334d3b3b0b2ba313987f4a5be26a96849f85"
+  integrity sha512-g8e52H98Li6LG9BHjzG9lZDibqQ9H2acNQOoOjgFEB6ha83MrmenH1kSus9jG+3Ow8Rx4fSsp4oHi9Ka+qcTtw==
 
 bear-react-grid@^2.0.1:
   version "2.0.1"
