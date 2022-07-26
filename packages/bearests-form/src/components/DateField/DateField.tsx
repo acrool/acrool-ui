@@ -1,4 +1,4 @@
-import React, {useCallback, useState, useMemo} from 'react';
+import React, {useCallback, useState, useMemo, useRef, useEffect} from 'react';
 import styled, {css} from 'styled-components/macro';
 import {media} from 'bear-react-grid';
 import {checkIsMobile} from 'bear-jsutils/browser';
@@ -50,9 +50,19 @@ const DateField: React.FC<IProps> = ({
 
     isVisibleSetToday = false,
 }) => {
+    const menuRef = useRef<HTMLDivElement|null>(null);
     const [isDatePickerVisible, setIsDatePickerVisible] = useState(false);
     const isMobile = useMemo(() => checkIsMobile(), []);
     const isVisiblePicker = useMemo(() => !isMobile && !disabled, [disabled, isMobile]);
+
+    /**
+     * 處理點擊遮罩
+     */
+    const handleClickOutSite = useCallback((evt: MouseEvent) => {
+        if (menuRef && menuRef.current && menuRef.current.contains(evt.target as Node)) return;
+
+        handleDatePickerVisible(false);
+    }, [menuRef])
 
 
     /**
@@ -60,6 +70,14 @@ const DateField: React.FC<IProps> = ({
      */
     const handleDatePickerVisible = useCallback((isVisible = false) => {
         setIsDatePickerVisible(isVisible);
+
+        setTimeout(() => {
+            if(isVisible){
+                document.addEventListener('click', handleClickOutSite);
+            }else{
+                document.removeEventListener('click', handleClickOutSite);
+            }
+        }, 0);
 
 
     }, []);
@@ -121,7 +139,11 @@ const DateField: React.FC<IProps> = ({
 
             {isVisiblePicker && (
                 <React.Fragment>
-                    <DatePickerContainer isVisible={isDatePickerVisible} position={position}>
+                    <DatePickerContainer
+                        ref={menuRef}
+                        isVisible={isDatePickerVisible}
+                        position={position}
+                    >
                         <Datepicker
                             value={value}
                             onChange={handleOnChange}
@@ -129,7 +151,6 @@ const DateField: React.FC<IProps> = ({
                             isDark
                         />
                     </DatePickerContainer>
-                    <CloseArea isVisible={isDatePickerVisible} onClick={() => handleDatePickerVisible(false)}/>
                 </React.Fragment>
             )}
 
@@ -160,7 +181,7 @@ const CloseArea = styled.div<any>`
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: ${props => (props.isVisible ? 0 : -1)};
+    z-index: 9;
 `;
 
 const CustomIcon = styled.div`
