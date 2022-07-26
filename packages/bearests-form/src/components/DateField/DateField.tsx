@@ -1,13 +1,14 @@
-import React, {useCallback, useState, useMemo, useRef, useEffect} from 'react';
+import React, {useCallback, useState, useMemo, useRef, forwardRef} from 'react';
 import styled, {css} from 'styled-components/macro';
 import {media} from 'bear-react-grid';
 import {checkIsMobile} from 'bear-jsutils/browser';
 import {isEmpty} from 'bear-jsutils/equal';
+import {getVisiblePosition} from 'bear-jsutils/dom';
+import {Icon} from '@bearests/atom';
+import {Datepicker} from 'bear-react-datepicker';
 import {FCProps} from '../../typings';
 
 // Component
-import {Datepicker} from 'bear-react-datepicker';
-import {Icon} from '@bearests/atom';
 import TextField from '../TextField';
 
 import 'bear-react-datepicker/dist/index.css';
@@ -15,10 +16,8 @@ import 'bear-react-datepicker/dist/index.css';
 interface IProps extends FCProps{
     placeholder?: string;
     value?: string;
-    position?: 'top'|'bottom';
     onChange?: (value: string) => void;
     disabled?: boolean;
-
     isVisibleSetToday?: boolean;
 }
 
@@ -38,22 +37,23 @@ interface IProps extends FCProps{
  * @param value
  * @param onChange
  */
-const DateField: React.FC<IProps> = ({
+const DateField = forwardRef<HTMLInputElement, IProps>(({
     className,
     style,
 
     placeholder,
     value,
-    position= 'bottom',
     onChange,
     disabled = false,
 
     isVisibleSetToday = false,
-}) => {
+}, ref) => {
     const menuRef = useRef<HTMLDivElement|null>(null);
+    const inputContainerRef = useRef<HTMLDivElement|null>(null);
     const [isDatePickerVisible, setIsDatePickerVisible] = useState(false);
     const isMobile = useMemo(() => checkIsMobile(), []);
     const isVisiblePicker = useMemo(() => !isMobile && !disabled, [disabled, isMobile]);
+
 
     /**
      * 處理點擊遮罩
@@ -64,6 +64,15 @@ const DateField: React.FC<IProps> = ({
         handleDatePickerVisible(false);
     }, [menuRef])
 
+    /**
+     * 取得顯示位置
+     */
+    const getPosition = () => {
+        if(inputContainerRef.current){
+            return getVisiblePosition(inputContainerRef.current);
+        }
+        return 'bottom';
+    };
 
     /**
      * 處理控制 Picker顯示隱藏
@@ -109,6 +118,7 @@ const DateField: React.FC<IProps> = ({
 
     return (
         <InputContainer
+            ref={inputContainerRef}
             className={className}
             style={style}
             isSelected={!isEmpty(value)}
@@ -142,7 +152,7 @@ const DateField: React.FC<IProps> = ({
                     <DatePickerContainer
                         ref={menuRef}
                         isVisible={isDatePickerVisible}
-                        position={position}
+                        position={getPosition()}
                     >
                         <Datepicker
                             value={value}
@@ -157,7 +167,7 @@ const DateField: React.FC<IProps> = ({
 
         </InputContainer>
     );
-};
+});
 
 export default DateField;
 
@@ -175,14 +185,6 @@ const CustomInput = styled(TextField)<{
 `;
 
 
-const CloseArea = styled.div<any>`
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9;
-`;
 
 const CustomIcon = styled.div`
     width: 30px;
@@ -208,12 +210,9 @@ const CustomIcon = styled.div`
 
 const CalendarIcon = styled(CustomIcon)``;
 
-const ClearIcon = styled(CustomIcon)<any>`
-    //position: absolute;
-    //right: 0;
-    //top: 0;
-    //bottom: 0;
-    //margin: auto;
+const ClearIcon = styled(CustomIcon)<{
+    onClick?: any,
+}>`
     opacity: 0;
     pointer-events: none;
     
@@ -222,8 +221,6 @@ const ClearIcon = styled(CustomIcon)<any>`
 const AfterIconGroup = styled.div`
     position: absolute;
     right: 0;
-    //top: 0;
-    //bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -252,15 +249,15 @@ const DatePickerContainer = styled.div<{
 
 const FakeInput = styled.div`
     color: #8d8d8d;
-    //height: inherit;
     display: flex;
     align-items: center;
     justify-content: space-between;
 `;
 
-const InputContainer = styled.div<any>`
+const InputContainer = styled.div<{
+    isSelected: boolean,
+}>`
     width: 100%;
-    //height: 44px;
     margin: 0;
     position: relative;
 

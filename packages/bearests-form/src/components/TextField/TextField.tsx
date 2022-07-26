@@ -94,7 +94,7 @@ const TextField = forwardRef<HTMLInputElement, IProps>(({
     );
 });
 
-export default memo(TextField, deepCompare);
+export default TextField;
 
 const InputGroupText = styled.span`
     border-radius: 5px;
