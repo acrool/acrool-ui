@@ -68,7 +68,7 @@ const FakeCheckbox = styled.span`
         width: 20px;
         height: 20px;
         content: "";
-        border: 1px solid rgba(0,40,100,.12);
+        border: 1px solid #444;
 
         transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }

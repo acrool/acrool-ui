@@ -176,7 +176,7 @@ const DropdownItem = styled(Button)`
 
 
 const DropdownList = styled.div`
-  border: 1px #6c757d;
+  border: 1px #444;
   border-radius: 4px;
   color: #fff;
   font-size: 14px;

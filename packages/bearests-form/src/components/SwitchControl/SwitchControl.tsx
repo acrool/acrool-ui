@@ -57,7 +57,7 @@ const FakeSlider = styled.span`
     background-color: #343a40;
     transition: .4s;
     border-radius: 34px;
-    border: 1px solid #343a40;
+    border: 1px solid #444;
 }
 
   :before {

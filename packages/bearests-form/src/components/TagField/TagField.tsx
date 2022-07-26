@@ -129,7 +129,7 @@ const TagFieldRoot = styled.label<{
     color: #c8cfd6;
     background: 0 0;
     background-clip: padding-box;
-    border: 1px solid #343a40;
+    border: 1px solid #444;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     margin-bottom: 0;

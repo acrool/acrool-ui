@@ -100,7 +100,7 @@ const InputGroupText = styled.span`
     border-radius: 5px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    border: 1px solid #343a40;
+    border: 1px solid #444;
     border-right: 0;
     background: 0 0;
 
@@ -129,7 +129,7 @@ const Input = styled.input<{
     background: 0 0;
     background-clip: padding-box;
 
-    border: 1px solid #343a40;
+    border: 1px solid #444;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 

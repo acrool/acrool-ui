@@ -89,8 +89,6 @@ const DateField: React.FC<IProps> = ({
 
 
 
-    // @ts-ignore
-    // @ts-ignore
     return (
         <InputContainer
             className={className}
