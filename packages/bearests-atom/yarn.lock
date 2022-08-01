@@ -1088,10 +1088,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bearests/core@0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@bearests/core/-/core-0.0.2.tgz#48d2f61a55a84f40ba19e81b0513670776933ec9"
-  integrity sha512-PQ+WgPziUXVGx/uJEo0aWlviEHjzuTRFdM067nXeUl+61L99plidB+4ZIOC3p/x7YxO+TqB/qb8qFobBCC4pUg==
+"@bearests/core@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@bearests/core/-/core-0.0.3.tgz#df29169b4a80991096e77169ea97e47151fbc190"
+  integrity sha512-l2AW0qLas7h2FuA+HdTdaH8Ke/ooe3pieNTmdfpAiXJUckOZECd0aa3UHliGc3BrCOrKtGGeuhHJ6xUraNOadQ==
 
 "@csstools/normalize.css@*":
   version "12.0.0"
