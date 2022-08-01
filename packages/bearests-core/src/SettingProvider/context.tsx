@@ -19,10 +19,10 @@ export interface IParams {
  /** ---------------------------------------*/
 const params: IParams = {
     iconSvg: {
-        symbolsPath: '/static/plugins/iconsvg/index.svg',
-        idPrefix: 'icon_'
+        symbolsPath: '/default-static/plugins/iconsvg/index.svg',
+        idPrefix: 'default_icon_'
     },
-    loadingImage: '/static/images/loading.gif',
+    loadingImage: '/default-static/images/loading.gif',
 };
 
 const SettingContext = React.createContext<IParams>(params);
