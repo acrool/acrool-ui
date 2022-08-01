@@ -1089,12 +1089,18 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bearests/atom@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@bearests/atom/-/atom-0.0.3.tgz#b81d1e604eb53368d911a85c1975dcefe9e06f0b"
-  integrity sha512-zYRcUWIiczGD70zkUFW3BtfkA8qWASfAkz9BWQIheFn/s2sEABNkFctjtUA/VpP/CNdzBkNJG/bxpkQzgvb7aA==
+"@bearests/atom@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@bearests/atom/-/atom-0.0.7.tgz#7f85d9ba63111e0aa2a1e7a8807e68a83430ed76"
+  integrity sha512-nLpqEO5ZvYbi99otCU/xyKuHExkcSgwj6pxtzlmw83DzTAqU32NilBcO19fKnWmnfufeZ2Ic41IV43QBwxx5Kg==
   dependencies:
+    "@bearests/core" "0.0.3"
     styled-components "5.3.5"
+
+"@bearests/core@0.0.3", "@bearests/core@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@bearests/core/-/core-0.0.3.tgz#df29169b4a80991096e77169ea97e47151fbc190"
+  integrity sha512-l2AW0qLas7h2FuA+HdTdaH8Ke/ooe3pieNTmdfpAiXJUckOZECd0aa3UHliGc3BrCOrKtGGeuhHJ6xUraNOadQ==
 
 "@csstools/normalize.css@*":
   version "12.0.0"
@@ -8719,11 +8725,6 @@ react-is@^18.0.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
-
-react-onclickoutside@^6.12.2:
-  version "6.12.2"
-  resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.12.2.tgz#8e6cf80c7d17a79f2c908399918158a7b02dda01"
-  integrity sha512-NMXGa223OnsrGVp5dJHkuKxQ4czdLmXSp5jSV9OqiCky9LOpPATn3vLldc+q5fK3gKbEHvr7J1u0yhBh/xYkpA==
 
 react-refresh@^0.11.0:
   version "0.11.0"
