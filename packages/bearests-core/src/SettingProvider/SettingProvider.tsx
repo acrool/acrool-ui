@@ -1,10 +1,8 @@
-import React, {Children} from 'react';
-import {SettingContextProvider, IIConSvg} from './context';
+import React, {Children, useState} from 'react';
+import {SettingContextProvider, IParams} from './context';
 
 
-interface IProps{
-    iconSvg: IIConSvg
-    loadingImage: string
+interface IProps extends IParams{
     children: JSX.Element
 }
 
@@ -13,10 +11,16 @@ const SettingProvider = ({
     loadingImage,
     children
 }: IProps) => {
-    
-    const providerParam = {iconSvg, loadingImage};
+    const [isPageSliderVisible, setPageSliderVisible] = useState(true);
 
-    return <SettingContextProvider value={providerParam}>
+    return <SettingContextProvider value={{
+        // all props
+        iconSvg,
+        loadingImage,
+
+        isPageSliderVisible,
+        setPageSliderVisible,
+    }}>
         {Children.only(children)}
     </SettingContextProvider>;
 };

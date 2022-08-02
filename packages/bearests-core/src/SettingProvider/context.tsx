@@ -10,8 +10,11 @@ export interface IIConSvg {
 }
 
 export interface IParams {
-    iconSvg: IIConSvg
-    loadingImage: string
+    iconSvg: IIConSvg,
+    loadingImage: string,
+
+    isPageSliderVisible?: boolean,
+    setPageSliderVisible?: (isVisible: boolean) => void,
 }
 
 /** -----------------------------------------
@@ -23,6 +26,9 @@ const params: IParams = {
         idPrefix: 'default_icon_'
     },
     loadingImage: '/default-static/images/loading.gif',
+
+    isPageSliderVisible: true,
+    setPageSliderVisible: () => {},
 };
 
 const SettingContext = React.createContext<IParams>(params);
