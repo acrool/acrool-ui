@@ -19,7 +19,11 @@
     "release:major": "standard-version -r major",
     "release:minor": "standard-version -r minor",
     "release:patch": "standard-version -r patch",
-    "release:alpha": "standard-version --prerelease alpha"
+    "release:alpha": "standard-version --prerelease alpha",
+    "npm-publish:core": "cd ./packages/bearests-core && npm publish --access=public",
+    "npm-publish:atom": "cd ./packages/bearests-atom && npm publish --access=public",
+    "npm-publish:form": "cd ./packages/bearests-form && npm publish --access=public",
+    "npm-publish:organize": "cd ./packages/bearests-organize && npm publish --access=public"
   },
   "devDependencies": {
     "cz-conventional-changelog": "3.3.0",
