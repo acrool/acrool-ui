@@ -1089,18 +1089,18 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bearests/atom@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@bearests/atom/-/atom-0.0.7.tgz#7f85d9ba63111e0aa2a1e7a8807e68a83430ed76"
-  integrity sha512-nLpqEO5ZvYbi99otCU/xyKuHExkcSgwj6pxtzlmw83DzTAqU32NilBcO19fKnWmnfufeZ2Ic41IV43QBwxx5Kg==
+"@bearests/atom@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@bearests/atom/-/atom-0.0.8.tgz#490bb27f37905fc1b83adca336be2941b9f860b7"
+  integrity sha512-5gOoK0zyG+bcewxsSftWpGiO8Z62wcBcFwHztF1V1LjZLO5cdZWviz9AX+lLnXLVLyHtxS/AG5KFhFQb9jrVDw==
   dependencies:
-    "@bearests/core" "0.0.3"
+    "@bearests/core" "^0.0.4"
     styled-components "5.3.5"
 
-"@bearests/core@0.0.3", "@bearests/core@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@bearests/core/-/core-0.0.3.tgz#df29169b4a80991096e77169ea97e47151fbc190"
-  integrity sha512-l2AW0qLas7h2FuA+HdTdaH8Ke/ooe3pieNTmdfpAiXJUckOZECd0aa3UHliGc3BrCOrKtGGeuhHJ6xUraNOadQ==
+"@bearests/core@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@bearests/core/-/core-0.0.4.tgz#89b5ccca81e4da241f47df8a32c8eb5967d5fedd"
+  integrity sha512-qxswudtXr1gNhyBHqb49VaAw8QR0CEjK0CyDy1alxvS+Ps/p0DtvOBH4RV8xaNRGWRv+2Cl2CjDaiDyyWftUiA==
 
 "@csstools/normalize.css@*":
   version "12.0.0"

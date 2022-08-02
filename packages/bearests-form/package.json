@@ -1,6 +1,6 @@
 {
   "name": "@bearests/form",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Bearests UI is a collection of React UI libraries for shipping new features faster. Start with our production-ready components.",
   "keywords": [
     "react",
@@ -50,8 +50,8 @@
   },
   "dependencies": {
     "styled-components": "5.3.5",
-    "@bearests/core": "^0.0.3",
-    "@bearests/atom": "^0.0.7"
+    "@bearests/core": "^0.0.4",
+    "@bearests/atom": "^0.0.8"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
