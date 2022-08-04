@@ -148,20 +148,18 @@ const DateField = forwardRef<HTMLInputElement, IProps>(({
             </FakeInput>
 
             {isVisiblePicker && (
-                <React.Fragment>
-                    <DatePickerContainer
-                        ref={menuRef}
-                        isVisible={isDatePickerVisible}
-                        position={getPosition()}
-                    >
-                        <Datepicker
-                            value={value}
-                            onChange={handleOnChange}
-                            isVisibleSetToday={isVisibleSetToday}
-                            isDark
-                        />
-                    </DatePickerContainer>
-                </React.Fragment>
+                <DatePickerContainer
+                    ref={menuRef}
+                    isVisible={isDatePickerVisible}
+                    position={getPosition()}
+                >
+                    <Datepicker
+                        value={value}
+                        onChange={handleOnChange}
+                        isVisibleSetToday={isVisibleSetToday}
+                        isDark
+                    />
+                </DatePickerContainer>
             )}
 
 
