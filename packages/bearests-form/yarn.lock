@@ -3056,10 +3056,10 @@ bear-react-datepicker@2.1.0:
   resolved "https://registry.yarnpkg.com/bear-react-datepicker/-/bear-react-datepicker-2.1.0.tgz#caeac599c0de3ed2c3916bbef89f18f04546c708"
   integrity sha512-xQsMqMG06Kj9Mi68H+nx81HIWf2TWXU4Hoh029h8ytAylLVqEOFvT7haBgRRYSQ/IGxq5H2Yvjo8+zFUCV0SPw==
 
-bear-react-dropdown@2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/bear-react-dropdown/-/bear-react-dropdown-2.1.2.tgz#8dd79f4d829957bc13ee9040530e9c52d21a01b3"
-  integrity sha512-ig7CeztdSXy/Mp+3RKKIKYDA5K304iglfe1OUDJ8bcI5qW/bMrl6Fz0+mDCAERFwtkvhVYzS8p1vJhbDMDSxrA==
+bear-react-dropdown@2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/bear-react-dropdown/-/bear-react-dropdown-2.1.4.tgz#2871d792af7f09e1a45e41a75080f6b72dbb40fe"
+  integrity sha512-1Tc6RKBhjFo3n2Coef/Xs5Ml2ToaHEJlMMZZgt9DdoGarfsvHWzWBykcUyWzCGH+y/TcIx1SlUsTkt4LC3DlRg==
   dependencies:
     bear-jsutils "1.0.13"
 

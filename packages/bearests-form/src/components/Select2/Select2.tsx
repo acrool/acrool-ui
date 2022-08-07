@@ -1,18 +1,16 @@
-import React, {useCallback, useMemo, useState, useEffect, useRef, startTransition} from 'react';
-import styled from 'styled-components/macro';
-import {Button, Icon} from '@bearests/atom';
+import React, {useCallback, useMemo, useState, useRef} from 'react';
+import styled, {css} from 'styled-components/macro';
+import {Dropdown} from 'bear-react-dropdown';
+import {checkIsMobile} from 'bear-jsutils/browser';
+import {getVisiblePosition} from 'bear-jsutils/dom';
 import {FCProps} from '../../typings';
-
-// Components
-import TextField from '../TextField';
-
-
 
 
 
 type TOption = {
     value: string;
     text: string;
+    avatarUrl?: string,
 }
 interface IProps extends FCProps {
     title?: string;
@@ -24,13 +22,9 @@ interface IProps extends FCProps {
     errorMessage?: string;
     remarkMessage?: string;
     placeholder?: string;
+    isSearchEnable?: boolean,
 }
 
-
-
-type IFormData = {
-    keyword: string;
-}
 
 
 /**
@@ -44,74 +38,72 @@ type IFormData = {
  * @param value
  * @param onChange
  */
-const Select2 = ({
-    style,
-    className,
-    options = [{text: '', value: ''}],
-    disabled = false,
-    value='',
-    onChange,
-    placeholder= '',
-}: IProps) => {
-    const [isVisiblePanel, setIsVisiblePanel] = useState(false);
-    const keywordRef = useRef<HTMLInputElement>(null);
-    const [keyword, setKeyword] = useState<string>('');
-    // const {control, watch} = useForm<IFormData>();
-    // const keyword = watch('keyword');
+const Select = ({
+                    style,
+                    className,
+                    options = [],
+                    disabled = false,
+                    value,
+                    onChange,
+                    placeholder= '',
+                    isSearchEnable = false,
+                }: IProps) => {
+    const menuRef = useRef<HTMLDivElement|null>(null);
+    const inputContainerRef = useRef<HTMLDivElement|null>(null);
+    const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+    const isMobile = useMemo(() => checkIsMobile(), []);
+    const isVisiblePicker = useMemo(() => !isMobile && !disabled, [disabled, isMobile]);
+
 
     /**
-     * 開啟自動 focus 再輸入框
+     * 處理點擊遮罩
      */
-    useEffect(() => {
-        if(isVisiblePanel && keywordRef?.current !== null){
-            keywordRef.current.focus();
+    const handleClickOutSite = useCallback((evt: MouseEvent) => {
+        if (menuRef && menuRef.current && menuRef.current.contains(evt.target as Node)) return;
+
+        handleDropdownVisible(false);
+    }, [menuRef]);
+
+    /**
+     * 取得顯示位置
+     */
+    const getPosition = () => {
+        if(inputContainerRef.current){
+            return getVisiblePosition(inputContainerRef.current);
         }
-
-    }, [isVisiblePanel, keywordRef]);
-
-
-    const handleSetKeyword = (value: string) => {
-
-        startTransition(() => {
-            setKeyword(value);
-        });
+        return 'bottom';
     };
 
+    /**
+     * 處理控制 Picker顯示隱藏
+     */
+    const handleDropdownVisible = useCallback((isVisible = false) => {
+        setIsDropdownVisible(isVisible);
 
-    const handleOnClick = useCallback((value: string) => {
-        if (onChange) {
-            onChange(value);
+        setTimeout(() => {
+            if(isVisible){
+                document.addEventListener('click', handleClickOutSite);
+            }else{
+                document.removeEventListener('click', handleClickOutSite);
+            }
+        }, 0);
+
+
+    }, []);
+
+    /**
+     * 處理值改變
+     */
+    const handleOnChange = useCallback((currentValue: string) => {
+        handleDropdownVisible(false);
+        if(onChange){
+            onChange(currentValue);
         }
-        setIsVisiblePanel(false);
-
-
     }, [onChange]);
-
-    const renderOptions = useMemo(() => {
-        return options
-            .filter(row => {
-                if(keyword?.length > 0){
-                    return row.text.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
-                }
-                return true;
-            })
-            .map((row) => {
-                return (<DropdownItem
-                    key={row.value} isBlock
-                    onClick={() => handleOnClick(String(row.value))}
-                    className="text-ellipsis"
-                >
-                    {row.text}
-                </DropdownItem>);
-            });
-
-
-    }, [options, keyword]);
 
 
     const getText = useMemo(() => {
         const current = options.find(row => String(row.value) === String(value));
-        // console.log('current', current, value);
         if(current){
             return current.text;
         }
@@ -120,95 +112,62 @@ const Select2 = ({
 
     }, [value, options, placeholder]);
 
+
     return (<Select2Content className={className} style={style}>
 
-        <PanelButton color="primary"
-            isBlock
-            onClick={() => setIsVisiblePanel(true)}
-            disabled={disabled}
-        >
-            <span className="flex-grow-1 text-left text-ellipsis">{getText}</span>
-            <Icon code="caret-down" size={12} color="#fff"/>
-        </PanelButton>
+            <PanelButton
+                type="button"
+                onClick={() => handleDropdownVisible(true)}
+                disabled={disabled}
+            >
+                <span className="flex-grow-1 text-left text-ellipsis">{getText}</span>
+            </PanelButton>
 
 
-        {isVisiblePanel && (<DropdownBox>
+            {isVisiblePicker && (<DropdownContainer
+                ref={menuRef}
+                isVisible={isDropdownVisible}
+                position={getPosition()}
+            >
+                <Dropdown isDark options={options} value={value} onChange={handleOnChange} isSearchEnable={isSearchEnable}/>
+            </DropdownContainer>)}
 
-            <TextField value={keyword} onChange={handleSetKeyword}/>
-
-            <DropdownList>
-                {renderOptions}
-            </DropdownList>
-        </DropdownBox>)}
-
-        {isVisiblePanel && (
-            <Bg onClick={() => setIsVisiblePanel(false)}/>
-        )}
-    </Select2Content>
+        </Select2Content>
 
     );
 };
 
-export default Select2;
-
-const PanelButton = styled(Button)`
-    justify-content: flex-start;
-    white-space:nowrap;
-  overflow: hidden;
-`;
+export default Select;
 
 
-const DropdownItem = styled(Button)`
-  padding: 5px 10px;
-  cursor: pointer;
-  color: #fff;
-  text-align: left;
+
+const PanelButton = styled.button`
   justify-content: flex-start;
-  //align-items: flex-start;
   white-space:nowrap;
   overflow: hidden;
-
-  :hover{
-      background-color: #55a532;
-      opacity: .8;
-  }
-`;
-
-
-const DropdownList = styled.div`
-  border: 1px #444;
-  border-radius: 4px;
   color: #fff;
-  font-size: 14px;
-  padding: 2px;
-  overflow-y: scroll;
-  width: 100%;
-  height: auto;
-  flex: 1;
+  padding: 0;
 `;
 
-
-const DropdownBox = styled.div`
- width: 250px;
-  max-width: 500px;
-  max-height: 450px;
-  height: auto;
+const DropdownContainer = styled.div<{
+    isVisible: boolean,
+    position: 'top'|'bottom';
+}>`
   position: absolute;
-  z-index: 10;
-  background-color: #272c31;
-  display: flex;
-  flex-direction: column;
-
-`;
-
-const Bg = styled.div`
-  position: fixed;
-  top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
-  z-index: 1;
+  visibility: ${props => (props.isVisible ? 'visible' : 'hidden')};
+  opacity: ${props => (props.isVisible ? 1 : 0)};
+  z-index: ${props => (props.isVisible ? 10 : -1)};
+  transition: opacity .3s ease;
+
+  ${props => props.position === 'top' && css`
+    bottom: calc(100% - 1px);
+  `}
+  ${props => props.position === 'bottom' && css`
+    top: calc(100% - 1px);
+  `}
 `;
+
 
 const Select2Content = styled.div`
   position: relative;
