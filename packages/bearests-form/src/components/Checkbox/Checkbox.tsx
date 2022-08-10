@@ -1,6 +1,5 @@
-import React, {forwardRef, memo, useCallback} from 'react';
+import React, {forwardRef} from 'react';
 import styled from 'styled-components/macro';
-import {deepCompare} from 'bear-jsutils/equal';
 import {FCProps} from '../../typings';
 
 
@@ -23,13 +22,13 @@ const Checkbox = forwardRef<HTMLInputElement, IProps>(({
     value,
     disabled = false,
 }, ref) => {
-    const handleOnChange = useCallback((isChecked: boolean) => {
+    const handleOnChange = (isChecked: boolean) => {
         if(onChange){
             // console.log('onchange', isChecked);
             onChange(isChecked);
         }
 
-    }, [value]);
+    };
 
     return (
         <CheckboxRoot className={className} style={style} data-checked={checked}>
@@ -46,7 +45,7 @@ const Checkbox = forwardRef<HTMLInputElement, IProps>(({
     );
 });
 
-export default memo(Checkbox, deepCompare);
+export default Checkbox;
 
 
 const FakeCheckbox = styled.span`
