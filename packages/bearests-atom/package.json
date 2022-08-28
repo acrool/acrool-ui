@@ -1,6 +1,6 @@
 {
   "name": "@bearests/atom",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Bearests UI is a collection of React UI libraries for shipping new features faster. Start with our production-ready components.",
   "keywords": [
     "react",
@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "styled-components": "5.3.5",
-    "@bearests/core": "^0.0.4"
+    "@bearests/core": "^0.0.5"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",

@@ -1102,6 +1102,11 @@
   resolved "https://registry.yarnpkg.com/@bearests/core/-/core-0.0.4.tgz#89b5ccca81e4da241f47df8a32c8eb5967d5fedd"
   integrity sha512-qxswudtXr1gNhyBHqb49VaAw8QR0CEjK0CyDy1alxvS+Ps/p0DtvOBH4RV8xaNRGWRv+2Cl2CjDaiDyyWftUiA==
 
+"@bearests/core@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@bearests/core/-/core-0.0.5.tgz#95e3b8d03204a1cd123f5debb2ccda16504f4ff3"
+  integrity sha512-b36AkOWF0ZstoDhP+uChtlIkU0khev5nYF2q1ks97CefYiT8DMJk+yitC9BGd/YxW6cSrOBiNOxZMtn3ei8qGg==
+
 "@csstools/normalize.css@*":
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-12.0.0.tgz#a9583a75c3f150667771f30b60d9f059473e62c4"

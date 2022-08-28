@@ -1,6 +1,6 @@
 {
   "name": "@bearests/form",
-  "version": "0.0.18",
+  "version": "0.0.20",
   "description": "Bearests UI is a collection of React UI libraries for shipping new features faster. Start with our production-ready components.",
   "keywords": [
     "react",
@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "styled-components": "5.3.5",
-    "@bearests/core": "^0.0.4",
+    "@bearests/core": "^0.0.5",
     "@bearests/atom": "^0.0.8",
     "bear-react-datepicker": "2.1.0",
     "bear-react-dropdown": "2.1.4"

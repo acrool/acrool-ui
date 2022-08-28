@@ -153,7 +153,7 @@ const PageSlider = ({
                         <MainMenuLink onClick={(event: any) => handleControlPanel(0, row.path, row?.children?.length, event.metaKey || event.ctrlKey)}>
                             <IconThumbnail>
                                 {(row.after.type === 'icon' && row.after.code)?
-                                    <Icon code={row.after.code} color={row.after.color}/>
+                                    <Icon code={row.after.code} color={row.after.color} size={row.after.size}/>
                                     :
                                     row.after.code
                                 }
@@ -186,7 +186,7 @@ const PageSlider = ({
                                                 <SubIconThumbnail>
                                                     {
                                                         (subRow.after.type === 'icon' && row.after.code) ?
-                                                            <Icon code={row.after.code}/>
+                                                            <Icon code={row.after.code} size={row.after.size}/>
                                                             :
                                                             subRow.after.code
                                                     }
@@ -219,7 +219,7 @@ const PageSlider = ({
                                                                     <SubIconThumbnail>
                                                                         {
                                                                             (thirdRow.after.type === 'icon' && row.after.code) ?
-                                                                                <Icon code={row.after.code}/>
+                                                                                <Icon code={row.after.code} size={row.after.size}/>
                                                                                 :
                                                                                 thirdRow.after.code
                                                                         }
@@ -713,7 +713,7 @@ const MenuDetails = styled.span`
 
 
 const MenuTitle = styled.div`
-    line-height: 28px;
+    line-height: 16px;
 `;
 
 const MenuIcon = styled(Icon)`
