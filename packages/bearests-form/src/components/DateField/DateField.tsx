@@ -11,7 +11,7 @@ import {FCProps} from '../../typings';
 // Component
 import TextField from '../TextField';
 
-import 'bear-react-datepicker/dist/index.css';
+// import 'bear-react-datepicker/dist/index.css';
 
 interface IProps extends FCProps{
     placeholder?: string;
