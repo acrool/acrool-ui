@@ -52,8 +52,8 @@ const TextField = forwardRef<HTMLInputElement, IProps>(({
     /**
      * 處理值改變
      */
-    const handleChange = useCallback((value: string) => {
-        onChange(value);
+    const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+        onChange(event.target.value);
     }, [onChange]);
 
     const BaseInput = useMemo(() => {
@@ -113,9 +113,7 @@ const InputGroupText = styled.span`
 
 `;
 
-const Input = styled.input<{
-    onChange: any,
-}>`
+const Input = styled.input`
     position: relative;
     display: block;
     width: 100%;
